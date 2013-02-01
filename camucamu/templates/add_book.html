@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}CamuCamu - Add a Book!{% endblock %}
+
+{% block content %}
+	<p>Congratulations! Let's add that book to your reading list:</p>
+
+	<form method="post" action="">{% csrf_token %}
+		<ul>
+			{{ BookForm.as_ul }}
+		</ul>
+		<input type="submit" value="Submit Form" />
+	</form>
+
+{% endblock %}

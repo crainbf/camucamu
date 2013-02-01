@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}CamuCamu - Stats{% endblock %}
+
+{% block content %}
+
+	<a href="/addbook/">Add another book!</a>
+	<p>Here is a list of the books you've read so far:</p>
+
+	<ul>
+		{% for book in books %}
+			{% ifequal book.user|stringformat:"s" user.username %}
+				{% ifchanged %}<h2>{{ book.date_finished|date:"Y" }}</h2>{% endifchanged %}
+				{% ifchanged %}<h4>{{ book.date_finished|date:"F" }}</h4>{% endifchanged %}
+				<li>{{ book.title }}</li>
+			{% endifequal %}
+		{% endfor %}
+	</ul>
+
+{% endblock %}

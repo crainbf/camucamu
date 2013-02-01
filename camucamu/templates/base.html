@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/base.css" type="text/css"/>
+	{% block stylesheet %}{% endblock %}
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>CamuCamu</h1>
+		<h3>Keep Track of Your Reading!</h3>
+		<nav id="topbar">
+			<ul>
+				<a href="/home/"><li>Home</li></a>
+				<a href="/stats/"><li>Stats</li></a>
+				<a href="/contact/"><li>Contact</li></a>
+				<a href="/about/"><li>About</li></a>
+				{% if not logged_in %}<a href="/accounts/login/" id="log"><li>Login</li></a>{% endif %}
+				{% if logged_in %}<a href="/accounts/logout/" id="log"><li>Logout</li></a>{% endif %}
+			</ul>
+		</nav>
+	</div>
+	<div id="body">
+		<p class="date">{{ current_date }}</p>
+
+		{% block content %}{% endblock %}
+		{% if logged_in %}<p>Welcome {{ user.username|capfirst }}. You're logged in!</p>{% endif %}
+		<div id="push"></div>
+	</div>
+
+
+	<div id="footer">
+		<p>Thanks for visiting CamuCamu.</p>
+		<a href="/contact/">Contact</p>
+	</div>
+	
+</div>
+</body>
+</html>

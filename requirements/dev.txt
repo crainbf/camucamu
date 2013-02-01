@@ -1,0 +1,6 @@
+# This file lists all the packages used in the project. To run the site locally, make changes etc, install all the packages listed in a virtual env.
+#
+# The requirements here apply for local development. For production, testing, etc separate requirements files need to be created. 
+
+-r common.txt 
+

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}CamuCamu - Contact{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/css/contact_form.css" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+	<h2>We love to hear from you!</h2>
+
+	{% if form.errors %}
+		<p style="color:red;">
+			Please correct the error{{ form.errors|pluralize }} below.
+		</p>
+	{% endif %}
+
+	<form action="" method="post">
+		<div class="field">
+			{{ form.subject.errors }}
+			<label for="id_subject">Subject:</label>
+			{{ form.subject }}
+		</div>
+		<div class="field">
+			{{ form.email.errors }}
+			<label for="email_sender">Email:</label>
+			{{ form.email }}
+		</div>
+
+		<div class="field">
+			{{ form.message.errors }}
+			<label for="id_message">Message:</label>
+			{{ form.message }}
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+	
+{% endblock %}

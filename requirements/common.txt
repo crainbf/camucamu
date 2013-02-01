@@ -1,0 +1,3 @@
+# This file holds all the dependencies that are commonly shared between all other environments. For example, Django since it is needed in all environments. 
+
+Django==1.4.2
