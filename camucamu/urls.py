@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 from views import *
 from django.contrib import admin
 admin.autodiscover()
-from camucamu import settings
+from django.conf import settings
 from django.contrib.auth.views import login, logout
 
 # Uncomment the next two lines to enable the admin:

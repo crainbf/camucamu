@@ -16,6 +16,7 @@
 	{% endif %}
 
 	<form action="" method="post">
+		{% csrf_token %}
 		<div class="field">
 			{{ form.subject.errors }}
 			<label for="id_subject">Subject:</label>
